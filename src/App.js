@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Invite from './components/invitePage/InviteComp';
+import InviteResponseDetails from './components/InviteResponseDetail/InviteResponseDetail';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Invite />} />
+          <Route path="/:parameterName" element={<Invite />} />
+          <Route path="/admin" element={<InviteResponseDetails />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
+// http://localhost:3000/?n=tarkeshwar%20modi&a=kalar%20road,%20barki%20suriya&t=full%20family&l=hindi

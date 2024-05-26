@@ -1,0 +1,61 @@
+/* WeddingCard.css */
+
+.wedding-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    /* background-color: #f9f9f9; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .details-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+  }
+  
+  .detail {
+    flex: 1;
+    /* background-color: #fff; */
+    min-width: 80px;
+    background-color: rgb(255, 255, 255, 0.8);
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(193, 21, 21, 0.868);
+  }
+  .detail:hover, .detail:focus{
+    transform: scale(1.1);
+  }
+  .title{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .detail h3 {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .detail p {
+    font-size: 10px;
+    color: #666;
+  }
+
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .details-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Use grid layout on larger screens */
+    }
+  }
+  .sad-gif{
+    display: none;
+    position: absolute;
+    bottom: -730;
+    right: 12;
+  }
+  .decline :hover .sad-gif{
+    display: contents;
+  }

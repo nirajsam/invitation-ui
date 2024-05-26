@@ -1,0 +1,25 @@
+.invite-card{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+  border: 10px solid maroon; /* Border around the entire page */
+  box-sizing: border-box; 
+  scroll-snap-align: center;
+  overflow: auto;
+}
+.page2{
+  background-image: url("https://img1.picmix.com/output/stamp/normal/1/3/5/8/278531_cea2a.gif");
+  background-size: cover; /* or 100% 100% for stretching */
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+.creator{
+  position: absolute;
+  right: 10;
+  top:197vh;
+  font-size: 7px;
+}

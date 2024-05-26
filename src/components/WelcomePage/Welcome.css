@@ -1,0 +1,39 @@
+
+p{
+  font-size: small;
+}
+.sender_details{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.invitee{
+  /* border: 2px solid skyblue; */
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin:0 5% 0 5%;
+  padding: 1%;
+}
+.topImage{
+  height: 200px;
+  width: 300px;
+}
+@media (min-width: 768px) {
+  .topImage{
+    width: 400px;
+  }
+  .invitee{
+    margin: .5%;
+  }
+}
+/* .welcome{
+  background-image: url("https://www.webstrot.com/html/wedding/multi_page/images/content/event_img.gif");
+  background-size: auto; 
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+} */
+.reminder_QR{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
