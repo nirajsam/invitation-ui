@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './InviteResponseDetail.css'; // Import CSS file for styling
 import axios from 'axios';
+import cfg from '../../config'
+var URL=cfg.URL
 
 const InviteResponseDetails = () => {
     const [tableData, setTableData] = useState([])
@@ -9,7 +11,7 @@ const InviteResponseDetails = () => {
     const fetchGuestDetails = async() => {
         try {
             // API call to submit form details
-            const res = await axios.get('http://localhost:5001/api/getGuests');
+            const res = await axios.get(`${URL}/api/getGuests`);
             console.log("guest",res.data)
             setTableData(res.data)
         } catch (error) {

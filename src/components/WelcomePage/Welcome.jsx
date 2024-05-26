@@ -33,7 +33,7 @@ const Welcome = ({guestName,guestAddress,guestType,content}) => {
       <p><b>{content.marriageDate}</b> ({content.weekDay})</p>
       <p>{content.saveTheDate}</p>
       <CountdownTimer targetDate={targetDate} />
-      <div className='reminder_QR'><p onClick={openReminderPopup} style={{ cursor: 'pointer' }}>{content?.reminderDetail?.setReminder}<button style={{border:'2px solid maroon',borderRadius:'50%'}}>🔔</button></p>&nbsp;&nbsp;<button style={{border:'2px solid maroon', borderRadius:'10%'}} onClick={openQRModal}>QR</button></div>
+      <div className='reminder_QR'><p onClick={openReminderPopup} style={{ cursor: 'pointer' }}>{content?.reminderDetail?.setReminder} &nbsp;<button className='bell-icon-button'><span className='bell'>🔔</span></button></p>&nbsp;&nbsp;<button className='qr-button' onClick={openQRModal}>QR</button></div>
       <div className='invitee'>
       <p>{content.welcomeLabel}  <span style={{color:'maroon', fontSize:'16px', fontWeight:'bold'}}>{guestName || content.guestName}</span></p>
       <p>{guestAddress|| content.guestAddress|| "kala road suriya"}<span>{}</span></p>

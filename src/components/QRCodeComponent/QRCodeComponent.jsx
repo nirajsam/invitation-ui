@@ -4,6 +4,8 @@ import axios from 'axios';
 import QRCode from 'qrcode.react';
 import QrScanner from 'react-qr-scanner';
 import './QRCodeComponent.css'
+import cfg from '../../config'
+var URL=cfg.URL
 
 const QRCodeComponent = ({ isOpen, onClose, guestName, guestAddress }) => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -23,7 +25,7 @@ const QRCodeComponent = ({ isOpen, onClose, guestName, guestAddress }) => {
 
   const fetchGuestDetails = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/getGuests');
+      const res = await axios.get(`${URL}/api/getGuests`);
       console.log('guest', res.data);
       setTableData(res.data);
       setLoadingGuest(false);
@@ -45,11 +47,11 @@ const QRCodeComponent = ({ isOpen, onClose, guestName, guestAddress }) => {
 
     try {
       // API call to submit form details
-      await axios.post('http://localhost:5001/api/guestDetail', {name: scannedName, address: scannedAddress, attendedMemberCount: memberCount});
+      await axios.post(`${URL}/api/guestDetail`, {name: scannedName, address: scannedAddress, attendedMemberCount: memberCount});
       // Close popup after successful submission
       setUpdateSuccessMessage("updated members arrival count")
     } catch (error) {
-        setUpdateErrorMessage('Something wend=t wrong');
+        setUpdateErrorMessage('Something went wrong');
     }
   };
 
@@ -166,7 +168,7 @@ const QRCodeComponent = ({ isOpen, onClose, guestName, guestAddress }) => {
           </div>
         )}
       </div><br /><br /><br />
-      <button onClick={simulateScan}>Simulate Scan</button>
+      {/* <button onClick={simulateScan}>Simulate Scan</button> */}
     </Modal>
   );
 };

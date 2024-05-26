@@ -3,6 +3,8 @@ import axios from 'axios';
 import './CeremonyDetails.css';
 import { scrollToTopSlowly } from '../Scroll/ScrollToTop';
 import PopupForm from '../responsePage/AcceptanceForm';
+import cfg from '../../config'
+var URL=cfg.URL
 
 const CeremonyDetails = ({ content,guestDetail }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -16,7 +18,7 @@ const CeremonyDetails = ({ content,guestDetail }) => {
   const declineInvitation = async() => {
     try {
       // API call to submit form details
-      await axios.post('http://localhost:5001/api/guestDetail', {name: guestDetail[0], address: guestDetail[1], familyType: guestDetail[2],acceptOrDecline:"declined", availabilityDates: '', memberCount: ''});
+      await axios.post(`${URL}/api/guestDetail`, {name: guestDetail[0], address: guestDetail[1], familyType: guestDetail[2],acceptOrDecline:"declined", availabilityDates: '', memberCount: ''});
       window.alert("Thank you for your response, you can accept this anytime you want till one week before marriage")
     } catch (error) {
       console.error('Error decline invite:', error);

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './AcceptanceForm.css'
+import cfg from '../../config'
+var URL=cfg.URL
 
 const PopupForm = ({ content, onClose, guestDetail }) => {
   const [selectedDates, setSelectedDates] = useState([]);
@@ -24,7 +26,6 @@ const PopupForm = ({ content, onClose, guestDetail }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage('');
-    console.log("sam",{name: guestDetail[0], address: guestDetail[1], familyType: guestDetail[2], availabilityDates: selectedDates, memberCount: numberOfMembers})
     // Validation
     if (numberOfMembers && (isNaN(numberOfMembers) || numberOfMembers < 0 || numberOfMembers > 15)) {
       setErrorMessage('Number of members must be between 0 and 15');
@@ -33,7 +34,7 @@ const PopupForm = ({ content, onClose, guestDetail }) => {
 
     try {
       // API call to submit form details
-      await axios.post('http://localhost:5001/api/guestDetail', {name: guestDetail[0], address: guestDetail[1], familyType: guestDetail[2],acceptOrDecline:"accepted", availabilityDates: selectedDates, memberCount: numberOfMembers});
+      await axios.post(`${URL}/api/guestDetail`, {name: guestDetail[0], address: guestDetail[1], familyType: guestDetail[2],acceptOrDecline:"accepted", availabilityDates: selectedDates, memberCount: numberOfMembers});
       // Close popup after successful submission
       onClose();
       window.alert("thank you for your response, we will try our best to serve you better")

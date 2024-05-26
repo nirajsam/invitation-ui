@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './SetReminder.css'; // Import CSS for styling
+import cfg from '../../config'
+var URL=cfg.URL
 
 const SetReminder = ({ targetDate, onClose , content}) => {
   const [email, setEmail] = useState('');
@@ -11,7 +13,7 @@ const SetReminder = ({ targetDate, onClose , content}) => {
     reminderDate.setDate(reminderDate.getDate() - parseInt(daysBefore));
 
     // Here you can send the reminderDate and email to your backend to handle email scheduling
-    const response = await fetch('http://localhost:5001/api/set-reminder', {
+    const response = await fetch(`${URL}api/set-reminder`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
