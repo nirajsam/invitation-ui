@@ -28,7 +28,7 @@ const CeremonyDetails = ({ content,guestDetail }) => {
     <>
     <br />
     {showPopup && <PopupForm content={content.acceptanceForm} onClose={handleClosePopup} guestDetail={guestDetail} />}
-    <div>{content.ceremonyDetailsLabel}</div>
+    <div className='ceremony-title'><b>{content.ceremonyDetailsLabel}</b></div>
     <div className="wedding-card">
       <div className="details-container">
         {content.cards.map((detail, index) => (

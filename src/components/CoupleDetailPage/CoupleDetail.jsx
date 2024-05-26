@@ -17,7 +17,7 @@ const CounpleDetail = ({content}) => {
   };
   return (
     <>
-    <div>{content.theCoupleLabel}</div>
+    <div><b>{content.theCoupleLabel}</b></div>
     <div className="couple-card-container">
       <div className="card groom-card">
         <div className="avatar-container">

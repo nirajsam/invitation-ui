@@ -13,7 +13,7 @@ const SetReminder = ({ targetDate, onClose , content}) => {
     reminderDate.setDate(reminderDate.getDate() - parseInt(daysBefore));
 
     // Here you can send the reminderDate and email to your backend to handle email scheduling
-    const response = await fetch(`${URL}api/set-reminder`, {
+    const response = await fetch(`${URL}/api/set-reminder`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -4,3 +4,12 @@
 #qr-admin{
     height: 500px;
 }
+.reset-button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 2%;
+    background-color: grey;
+    color: white;
+    border-radius: 10px;
+}

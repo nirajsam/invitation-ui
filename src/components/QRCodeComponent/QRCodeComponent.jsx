@@ -92,7 +92,7 @@ const QRCodeComponent = ({ isOpen, onClose, guestName, guestAddress }) => {
       const [scannedName, scannedAddress] = scannedData.split('_');
       
       const recognisedGuest = tableData?.filter(
-        (guest) => {return guest.name === scannedName && guest.address === scannedAddress && guest.acceptOrDecline === "accepted"}
+        (guest) => {return guest.name === scannedName && guest.address === scannedAddress && guest.acceptOrDecline === "accepted" && !guest.attendedMemberCount}
       );
       if (recognisedGuest.length > 0) {
         setIsAccepted('yes');
@@ -108,10 +108,18 @@ const QRCodeComponent = ({ isOpen, onClose, guestName, guestAddress }) => {
     height: 300,
     width: 240,
   };
-
+  const handleReset =() =>{
+    setLoadingScan(true)
+    setIsAccepted('')
+    setScannedData('')
+    setRecognisedGuest([])
+    setAttendedMemberCount(1)
+    setUpdateSuccessMessage('')
+    setUpdateErrorMessage('')
+  }
   const simulateScan = () => {
     // Simulate a scan for testing purposes
-    handleScan({ text: 'Sushmita modi_gaya' });
+    handleScan({ text: 'tarkeshwar modi_kalar road, barki suriya' });
   };
   return (
     <Modal isOpen={isOpen} contentLabel="Image Modal" ariaHideApp={false} id={isAdmin?`qr-admin`:'qr-guest'}>
@@ -167,6 +175,7 @@ const QRCodeComponent = ({ isOpen, onClose, guestName, guestAddress }) => {
             ) : null}
           </div>
         )}
+        <button className='reset-button' onClick={handleReset} >scan again</button>
       </div><br /><br /><br />
       {/* <button onClick={simulateScan}>Simulate Scan</button> */}
     </Modal>
