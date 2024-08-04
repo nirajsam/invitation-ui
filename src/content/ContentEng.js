@@ -4,7 +4,7 @@ const Content_en = {
         brideName:'Radha',
         groomName:'Krishna',
         saveTheDate:'Save The Date',
-        marriageDate:'22-06-2024',
+        marriageDate:'22-12-2024',
         weekDay:'Sunday',
         guestName:'',
         guestAddress:'',
