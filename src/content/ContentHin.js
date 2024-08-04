@@ -4,7 +4,7 @@ const Content_hi = {
         brideName: 'राधा',
         groomName: 'कृष्ण',
         saveTheDate: 'तारीख सुरक्षित रखें',
-        marriageDate: '18-04-2025',
+        marriageDate: '22-12-2024',
         weekDay: 'रविवार',
         guestName: '',
         guestAddress: '',
