@@ -36,7 +36,7 @@ const CountdownTimer = ({ targetDate }) => {
     }
 
     timerComponents.push(
-      <span className='timerbox'>
+      <span className='timerbox' key={interval}>
         <span className='tm'>{timeLeft[interval]}</span> <span>{interval}</span>{' '}
       </span>
     );

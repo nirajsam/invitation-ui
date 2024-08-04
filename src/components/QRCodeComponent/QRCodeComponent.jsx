@@ -173,9 +173,10 @@ const QRCodeComponent = ({ isOpen, onClose, guestName, guestAddress }) => {
                 on our guests list
               </p>
             ) : null}
+            <button className='reset-button' onClick={handleReset} >scan again</button>
           </div>
         )}
-        <button className='reset-button' onClick={handleReset} >scan again</button>
+        
       </div><br /><br /><br />
       {/* <button onClick={simulateScan}>Simulate Scan</button> */}
     </Modal>

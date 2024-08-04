@@ -1,8 +1,27 @@
 .App {
   text-align: center;
   background-color: rgb(204, 178, 178);
+  /*change theme here*/
+  /* background-color: #822e2e;
+  color: goldenrod !important */
 }
 button{
   cursor: pointer;
 }
 
+
+/*change theme*/
+/* .App{
+  background-color: ivory !important;
+  color: rgb(100, 73, 4) !important
+}
+.card{
+   box-shadow: 0 8px 12px rgba(189, 7, 7, 0.868) !important ;
+}
+.details-container > .details{
+  box-shadow: 0 8px 12px rgba(189, 7, 7, 0.868) !important ;
+}
+
+section{
+  border: 10px solid rgb(126, 1, 1) !important; 
+} */
